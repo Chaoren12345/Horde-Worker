@@ -175,7 +175,7 @@ class TerminalUI:
 
     CLIENT_AGENT = "terminalui:1:db0"
 
-    def __init__(self, worker_name=None, apikey=None, url="https://xinghui.pro"):
+    def __init__(self, worker_name=None, apikey=None, url="https://xinghui.lol"):
         self.url = url
         self.main = None
         self.width = 0

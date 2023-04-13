@@ -63,7 +63,7 @@ class LogStats:
     def download_stats(self, period, model_type="img"):
         self.unused_models = []  # not relevant
 
-        req = requests.get(f"https://xinghui.pro/api/v2/stats/{model_type}/models", verify=False)
+        req = requests.get(f"https://xinghui.lol/api/v2/stats/{model_type}/models", verify=False)
         self.used_models = req.json()[period] if req.ok else {}
 
     def parse_log(self):

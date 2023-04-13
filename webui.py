@@ -45,7 +45,7 @@ class WebUI:
         },
         "api_key": {
             "label": "API Key",
-            "info": "This is your Stable Horde API Key. You can get one free at " "https://xinghui.pro/register ",
+            "info": "This is your Stable Horde API Key. You can get one free at " "https://xinghui.lol/register ",
         },
         "low_vram_mode": {
             "label": "Enable low vram mode",
@@ -320,7 +320,7 @@ class WebUI:
 
     def load_workerID(self, worker_name):
         workerID = ""
-        workers_URL = "https://xinghui.pro/api/v2/workers"
+        workers_URL = "https://xinghui.lol/api/v2/workers"
         r = requests.get(workers_URL)
         worker_json = r.json()
         for item in worker_json:
@@ -330,7 +330,7 @@ class WebUI:
 
     def load_worker_mode(self, worker_name):
         worker_mode = False
-        workers_URL = "https://xinghui.pro/api/v2/workers"
+        workers_URL = "https://xinghui.lol/api/v2/workers"
         r = requests.get(workers_URL)
         worker_json = r.json()
         for item in worker_json:
@@ -340,7 +340,7 @@ class WebUI:
 
     def load_worker_stats(self, worker_name):
         worker_stats = ""
-        workers_URL = "https://xinghui.pro/api/v2/workers"
+        workers_URL = "https://xinghui.lol/api/v2/workers"
         r = requests.get(workers_URL)
         worker_json = r.json()
         for item in worker_json:
@@ -355,7 +355,7 @@ class WebUI:
         payload = {"maintenance": False, "name": worker_name}
         if current_mode == "False":
             payload = {"maintenance": True, "name": worker_name}
-        worker_URL = f"https://xinghui.pro/api/v2/workers/{worker_id}"
+        worker_URL = f"https://xinghui.lol/api/v2/workers/{worker_id}"
         requests.put(worker_URL, json=payload, headers=header)
         state = "enabled" if payload["maintenance"] else "disabled"
         return f"Maintenance mode is being {state}, this may take up to 30 seconds to update here. Please wait."
@@ -648,7 +648,7 @@ class WebUI:
                         value=config.enable_terminal_ui,
                         info=self._info("enable_terminal_ui"),
                     )
-                    config.default("horde_url", "https://xinghui.pro/")
+                    config.default("horde_url", "https://xinghui.lol/")
                     horde_url = gr.Textbox(
                         label=self._label("horde_url"),
                         value=config.horde_url,
